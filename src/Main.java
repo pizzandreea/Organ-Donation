@@ -12,7 +12,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Person d1 = new Doctor("Gelu", "Cine", 40,"1", "female", "1", 120000, "1", 3000);
+        Person d1 = new Doctor("Gelu", "Cine", 40,1, "female", 1, 120000, "1", 3000);
 
     }
 }

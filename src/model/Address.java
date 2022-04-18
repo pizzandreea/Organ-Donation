@@ -1,14 +1,14 @@
 package model;
 
 final public class Address {
-    private String addressId;
+    private int addressId;
     private String postalCode;
     private String phone;
     private String city;
     private String street;
     private Integer number;
 
-    public Address(String addressId, String postalCode, String phone, String city, String street, Integer number) {
+    public Address(int addressId, String postalCode, String phone, String city, String street, Integer number) {
         this.addressId = addressId;
         this.postalCode = postalCode;
         this.phone = phone;
@@ -17,11 +17,11 @@ final public class Address {
         this.number = number;
     }
 
-    public String getAddressId() {
+    public int getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(String addressId) {
+    public void setAddressId(int addressId) {
         this.addressId = addressId;
     }
 
