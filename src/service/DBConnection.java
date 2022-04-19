@@ -1,34 +1,25 @@
 package service;
 
-import java.sql.Connection;
+import service.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import service.Connection;
 
-public class DBConnection {
-    private static DBConnection instance = null;
-    private String url = "jdbc:mysql://localhost:3306/bankingsystem";
-    private String user = "root";
-    private String password = "";
-    Connection connection = null;
+public final class DBConnection {
+    private final String userName;
+    private final String password;
+    private final String url;
+    private final Connection connection;
 
-    public DBConnection() {
-        try {
-            connection = DriverManager.getConnection(url, user, password);
-        }
-        catch(SQLException e) {
-            e.printStackTrace();
-        }
+    public DBConnection(String userName, String password, String url) {
+        this.userName = userName;
+        this.password = password;
+        this.url = url;
+        this.connection = new Connection(userName, password, url);
     }
 
-    public static DBConnection getInstance() {
-        if(instance == null) {
-            instance = new DBConnection();
-        }
-        return instance;
-    }
-
-    public Connection getConnection() {
+    public Connection getConnection(){
         return connection;
     }
 }

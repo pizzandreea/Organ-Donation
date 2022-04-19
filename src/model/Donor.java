@@ -2,7 +2,7 @@ package model;
 
 public class Donor extends Person{
     private int donorId;
-    private String bloodType;
+    private final String bloodType;
     private String organDonating;
     private boolean donated;
 
@@ -25,10 +25,6 @@ public class Donor extends Person{
 
     public String getBloodType() {
         return bloodType;
-    }
-
-    public void setBloodType(String bloodType) {
-        this.bloodType = bloodType;
     }
 
     public String getOrganDonating() {

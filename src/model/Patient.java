@@ -1,12 +1,19 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class Patient extends Person{
+public class Patient extends Person  {
 
     private int patientId;
-    private String bloodType;
+    private final String bloodType;
     private String organNeeded;
+//    0 - fine (it has already received it)
+//    1 - ok
+//    2 - in bad shape
+//    3 - needs it in the next 2 months
+//    4 - urgently needs it in the next two weeks
+
     private int urgency;
     private ArrayList<Medicine> medicines;
 
@@ -40,16 +47,16 @@ public class Patient extends Person{
         return bloodType;
     }
 
-    public void setBloodType(String bloodType) {
-        this.bloodType = bloodType;
-    }
-
     public String getOrganNeeded() {
         return organNeeded;
     }
 
     public void setOrganNeeded(String organNeeded) {
         this.organNeeded = organNeeded;
+    }
+
+    public int getUrgency() {
+        return urgency;
     }
 
     public int isUrgency() {
@@ -77,4 +84,23 @@ public class Patient extends Person{
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "patientId=" + patientId +
+                ", bloodType='" + bloodType + '\'' +
+                ", organNeeded='" + organNeeded + '\'' +
+                ", urgency=" + urgency +
+                ", medicines=" + medicines +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", addressId=" + addressId +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
+
+
 }
+

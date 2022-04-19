@@ -67,4 +67,9 @@ public class Doctor extends Person {
     public void ChangeAddress(int newId) {
         addressId = newId;
     }
+
+    public void RaiseSalary(int raise) {
+        salary = salary + salary*raise;
+        charge = charge + 100;
+    }
 }
